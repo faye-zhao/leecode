@@ -1,0 +1,131 @@
+I am a highly experienced full-stack engineer with over 10 years in web technologies, 
+specializing in both front-end and back-end development. 
+Throughout my career, I’ve had the privilege of working with leading companies like 
+Aurora Innovation, Credit Karma, SurveyMonkey, Mint (Intuit), and Yahoo, where I developed 
+scalable applications and innovative data visualization tools. My expertise spans 
+various industries, including AI, FinTech, and SaaS, with a strong focus on 
+leveraging technologies such as React, Node.js, and D3. I thrive in collaborative
+ environments, mentoring junior engineers, and aligning technical solutions with 
+ business goals. My analytical and problem-solving skills enable me to drive projects 
+ to successful completion, ensuring a seamless user experience and optimal performance.
+
+ 1. Describe a challenging situation at work and how you handled it.
+
+Situation: At Aurora Innovation, we faced a significant challenge when integrating complex machine 
+learning models into our visualization tools for self-driving vehicles.
+
+Task: My role was to lead the development of these visualization tools while ensuring they 
+were user-friendly and effectively communicated the data.
+
+Action: I collaborated closely with data science teams to understand their models deeply. 
+I organized brainstorming sessions to gather input on key visualization needs and 
+implemented a series of prototypes using ThreeJS and D3 to ensure that the
+ tools were intuitive. Regular feedback loops with stakeholders helped us refine our approach.
+
+Result: The final product not only met our initial goals but also received positive 
+feedback from users for its clarity and usability. This led to a 25% increase in adoption rates among our internal teams, enhancing their workflow significantly.
+
+2. Give an example of a time when you had to work with a difficult team member.
+
+Situation: While at Credit Karma, I worked with a team member who had a very different approach 
+to project timelines and deliverables, leading to conflicts during a critical project.
+
+Task: I needed to ensure the project stayed on track while maintaining a positive team dynamic.
+
+Action: I scheduled a one-on-one meeting to understand their perspective better. We discussed 
+our differing work styles and agreed on a compromise where I would provide more frequent updates 
+on our progress. We also established a shared project timeline that incorporated their input.
+
+Result: This improved our collaboration and communication significantly. The project was completed 
+on time, and we developed a mutual respect that enhanced our teamwork in subsequent projects.
+
+3. Tell me about a time when you failed and what you learned from it.
+
+Situation: During my time at SurveyMonkey, I led a project to develop a new data visualization 
+product. Midway through, I realized that I had underestimated the complexity of integrating the existing 
+infrastructure.
+
+Task: I needed to find a way to get back on track without derailing the entire project.
+
+Action: I quickly convened the team to reassess our project plan. We conducted a thorough risk assessment 
+and decided to pivot some of our approaches. I took ownership of the miscalculation and communicated 
+openly with stakeholders about the adjustments needed.
+
+Result: We successfully launched the product with a minor delay, but the outcome was a robust system 
+that exceeded initial performance expectations. This experience taught me the importance of thorough 
+planning and the value of transparency with my team and stakeholders.
+
+4. Can you describe a project you managed from start to finish?
+
+Situation: At Mint, I was tasked with rebuilding the financial charting library into a single-page 
+application to improve performance.
+
+Task: I needed to manage the entire development process, from initial design to deployment, while coordinating 
+with multiple teams.
+
+Action: I led the architecture discussions, designed the user interface with Material UI, and implemented 
+the back-end  logic using Node.js and D3 for data visualizations. I also organized regular check-ins to 
+keep everyone aligned and address any issues promptly.
+
+Result: The new SPA drastically improved loading times and user satisfaction scores, leading to a 30% increase in engagement with our financial tools.
+
+5. Have you ever had to make a quick decision? What was it and what was the outcome?
+
+Situation: At Aurora Innovation, we encountered a bug in our visualization tool just before a critical 
+demonstration to stakeholders.
+
+Task: I had to decide whether to attempt a quick fix on the spot or to revert to a previous stable version.
+
+Action: After assessing the situation, I quickly decided to implement a temporary fix that wouldn’t impact 
+our core functionality while communicating transparently with the stakeholders about the situation. I also 
+set up a follow-up meeting to address any concerns after the demo.
+
+Result: The demo went smoothly, and stakeholders appreciated our honesty and ability to adapt. We fixed 
+the bug shortly after, and the project continued without any major setbacks.
+
+
+I have in-depth experience with Three.js, particularly in building interactive and data-driven 3D visualizations. 
+In my role at Aurora Innovation, I led the development of 3D machine learning visualization tools that allowed verticle teams 
+to visualize complex datasets and machine learning outputs for autonomous driving models. These tools provided a clear,
+ interactive representation of AI data and vehicle perception models, enabling users to analyze various elements in 3D space 
+ with precision.
+
+Using Three.js in conjunction with React, I created performant, intuitive components capable of handling real-time data updates and 
+supporting intricate visual details. I worked on optimizing rendering performance, managing 3D interactions, and ensuring compatibility 
+across different devices and browsers.
+
+As to BabylonJS, I took a couple hours to go through some BabaylosJS tutorials. Although I haven’t worked as extensively with Babylon.js, 
+I understand its strengths in game development, animation rendering and WebXR, and I feel comfortable transitioning to it 
+if needed due to my familiarity with WebGL and 3D concepts.
+
+A project that best demonstrates my ability to own a React-based frontend application as the early frontend developer was my work on an 
+internal data visualization platform at Aurora Innovation. This application was built to provide a suite of interactive tools that allowed 
+vertical teams and external users to view/update/review large datasets for machine learning models in real-time.
+
+I originally work in UI tools/Infrastructure team for general Frontent infrastructure development. After ReOrg 3 years ago, I became an early/founding 
+frontend developer for labeling team in Machine learning, I was responsible for the entire frontend stack—from setting up the React 
+architecture and integrating with backend APIs to implementing custom, reusable components and optimizing performance. 
+I worked closely with product managers and data engineers to gather requirements, troubleshoot issues, and design features that 
+aligned with the needs of the user base. I ensured that the codebase was well-organized and scalable to accommodate future enhancements.
+
+This experience reinforced my ability to make independent technical decisions, prioritize development tasks, and deliver a complete, 
+production-ready solution that met both technical and business goals. It also underscored the importance of creating documentation and 
+maintainable code.
+
+Experience with Three.js and Babylon.js
+I have in-depth experience with Three.js, particularly in building interactive, data-driven 3D visualizations. At Aurora Innovation, I led the development of 3D machine learning visualization tools that empowered vertical teams to analyze complex datasets and interpret machine learning outputs for autonomous driving models. These tools offered an intuitive, interactive representation of AI data and vehicle perception models, allowing users to examine elements in 3D space with precision.
+
+Using Three.js alongside React, I created efficient, user-friendly components capable of handling real-time data updates while supporting intricate visual details. I focused on optimizing rendering performance, managing 3D interactions, and ensuring compatibility across a variety of devices and browsers.
+
+Regarding Babylon.js, I have spent time going through Babylon.js tutorials to familiarize myself with its capabilities. Although I haven’t worked extensively with it in production, I understand its strengths in game development, animation rendering, and WebXR. I’m confident in my ability to transition to Babylon.js if needed, due to my strong background in WebGL and 3D rendering principles.
+
+Project Highlight: Ownership of a React-Based Frontend Application
+A project that best demonstrates my ability to independently manage a React-based frontend application was my work on an internal data visualization platform at Aurora Innovation. This platform provided a suite of interactive tools that enabled both vertical teams and external users to view, update, and review large datasets for machine learning models in real time.
+
+I initially worked on the UI Tools/Infrastructure team, focusing on frontend infrastructure development. However, after a reorganization three years ago, I became an early member and key frontend developer for the labeling team in the machine learning division. As the primary frontend developer, I was responsible for the entire frontend stack—from establishing the React architecture and integrating backend APIs to building custom, reusable components and optimizing performance.
+
+In this role, I collaborated closely with product managers and data engineers to gather requirements, troubleshoot issues, and design features aligned with the needs of the user base. I prioritized maintainable, scalable code to support future feature expansion and ensured that the codebase was well-documented for future developers.
+
+This experience reinforced my ability to make independent technical decisions, prioritize tasks, and deliver a complete, production-ready solution that met both technical and business goals. It also highlighted the importance of documentation and creating a sustainable, organized codebase for long-term success.
+
+

@@ -1,0 +1,156 @@
+Requirement:
+https://heygen.notion.site/Design-AI-Studio-Share-Out-db9d6ac01e4d4e6ea530a25a439af865
+
+Whiteboard:
+https://excalidraw.com/#room=bd8dbd938e5519ae3635,r1ABczsmPIKA-PfRVuqT6A
+
+The goal is to build a WYSIWYG video creation tool that allows non-technical users to create AI-generated videos using a visual editor. Users will be able to create video drafts with multiple scenes, add AI avatars, write scripts, and position avatars on a canvas. The system will also allow users to submit these video drafts to HeyGen’s AI video generation API.
+
+Key Components of the System:
+Frontend (WYSIWYG Editor): A web-based interface where users can create, edit, and visualize their video drafts.
+Backend: Manages video drafts, processes requests, and integrates with HeyGen’s AI video generation API.
+HeyGen API Integration: Integrate with the existing AI Video API for processing submitted video drafts into finalized AI videos.
+Storage: Persist drafts, assets, and final videos.
+Rendering Pipeline: Manage the submission of video drafts and track the status of video generation.
+Step-by-Step Approach to System Design
+1. Functional Requirements
+WYSIWYG Interface: Users must be able to:
+
+Create, edit, and preview video drafts.
+Add multiple scenes to a video draft.
+Choose from a list of AI avatars.
+Write a script for each scene.
+Position the AI avatar within each scene using a drag-and-drop canvas.
+Video Draft Submission:
+
+Users can submit their video drafts to generate an AI video.
+The system should communicate with the HeyGen AI Video API to generate the final video.
+Users should be able to track the status of the video generation process (pending, processing, completed, failed).
+Storage and Management:
+
+Store video drafts, including scene configurations, scripts, and avatar positions.
+Store completed videos for users to download or share.
+2. Non-Functional Requirements
+Scalability: The system should handle multiple concurrent users creating and submitting videos.
+Performance: Video generation should be fast, and the WYSIWYG editor should have low latency.
+Security: Protect user data, drafts, and video assets.
+Usability: Ensure a simple, intuitive interface for non-technical users.
+High Availability: Ensure the system is available at all times, especially during video submission and generation.
+High-Level Architecture
+Frontend (WYSIWYG Editor):
+React/Angular/Vue.js for the interface.
+Canvas Rendering: Allows users to position AI avatars on a scene and visualize the result.
+Drag-and-Drop: Enable users to move and position avatars.
+Form for Script Input: Users can input and update the script text for each scene.
+Backend:
+Node.js/Express or Python/Django for backend services.
+API Layer:
+Expose endpoints for:
+Creating video drafts.
+Updating drafts (adding scenes, changing avatars, modifying scripts).
+Submitting drafts to HeyGen’s API.
+Fetching video status after submission.
+Database:
+Store video drafts, user data, avatars, and completed videos.
+Use a relational database like PostgreSQL or MySQL for managing drafts, scenes, and metadata.
+Use NoSQL storage (e.g., MongoDB or Amazon S3) for handling large media assets (avatars, generated videos).
+HeyGen API Integration:
+Submit Video Drafts: The backend will call HeyGen’s AI Video API, passing the draft data (avatars, script, positions).
+Track Video Status: The backend will poll or receive updates on the status of video generation (pending, processing, completed, failed).
+Webhook or Polling: Once the video is generated, notify the frontend via webhooks or real-time updates (e.g., WebSockets).
+Storage:
+Persistent Storage for Drafts: Store draft data (scripts, avatar positions) in the database.
+Media Asset Storage: Store completed videos and avatars in Amazon S3 or similar cloud storage.
+Real-Time Updates:
+WebSockets or Push Notifications: Provide real-time updates on video generation status (progress bar, notifications when videos are ready).
+Detailed Component Design
+1. Frontend (WYSIWYG Editor)
+Dashboard: Display a list of drafts and completed videos.
+Canvas: A drag-and-drop canvas where users can place AI avatars for each scene. It will allow users to resize, move, and position avatars visually.
+Scene Editor:
+Avatar Selection: Choose from a list of predefined avatars.
+Script Input: Allow users to input or edit the script for each scene.
+Preview: Provide a preview of how the scene will look.
+Multi-Scene Management: Users can add, delete, and reorder scenes.
+Submit Button: Once the video draft is ready, users can submit it for generation.
+2. Backend Services
+Draft Management API:
+POST /drafts: Create a new video draft.
+GET /drafts/{id}: Get an existing draft.
+PUT /drafts/{id}: Update a draft (add scenes, change avatar, edit script).
+DELETE /drafts/{id}: Delete a draft.
+Video Submission API:
+POST /drafts/{id}/submit: Submit a video draft to HeyGen’s API for processing.
+GET /videos/{id}/status: Check the status of a submitted video.
+3. Database Design
+Tables:
+Users: Store user profiles, preferences, and authentication details.
+Drafts: Store video drafts with metadata (title, creation date, user ID).
+Scenes: Store individual scenes with avatar positions and scripts, linked to the draft.
+Avatars: Store metadata for predefined avatars (names, image URLs, positions).
+Videos: Store references to completed videos (HeyGen API video IDs, URLs).
+Example schema for Drafts and Scenes:
+
+sql
+Copy code
+CREATE TABLE Drafts (
+    id SERIAL PRIMARY KEY,
+    user_id INT,
+    title VARCHAR(255),
+    created_at TIMESTAMP,
+    updated_at TIMESTAMP
+);
+
+CREATE TABLE Scenes (
+    id SERIAL PRIMARY KEY,
+    draft_id INT,
+    scene_number INT,
+    avatar_id INT,
+    script TEXT,
+    avatar_position JSONB, -- Stores x, y coordinates and dimensions
+    created_at TIMESTAMP,
+    updated_at TIMESTAMP
+);
+
+CREATE TABLE Avatars (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255),
+    image_url VARCHAR(255),
+    description TEXT
+);
+4. HeyGen API Integration
+HeyGen API Call:
+Submission: When a user submits the draft, the backend will convert the draft data into a format required by the HeyGen API (e.g., avatar, script, scene position).
+Async Processing: The backend will submit the data to HeyGen asynchronously, allowing users to continue working while the video is processed.
+Status Tracking: The backend will either poll HeyGen’s API for video status or receive webhooks for status updates (depending on HeyGen’s capabilities).
+5. Video Generation Pipeline
+After submission:
+Queued Processing: When a video draft is submitted, it will be placed in a job queue for processing.
+Video Generation Status: Track the progress of video creation, which could include states like pending, processing, completed, or failed.
+Post-Processing: Once the video is generated by HeyGen, store the video URL and provide it to the user in their dashboard.
+6. Storage
+Amazon S3/Cloud Storage for:
+Storing avatars (predefined images).
+Storing final videos after generation.
+User Flow
+User Login:
+
+Users log in to the system using OAuth or standard email/password.
+Create a Draft:
+
+Users start a new video draft.
+They add scenes and select avatars from a predefined list.
+They input scripts for each scene and position avatars on the canvas.
+Submit Video:
+
+Once the draft is ready, the user submits it.
+The backend sends the draft data to the HeyGen API.
+The user can track the status of the video generation process.
+Receive Final Video:
+
+Once the video is processed by HeyGen’s API, the system notifies the user.
+Users can download or share the video directly from their dashboard.
+Scalability Considerations
+Autoscaling: Scale backend services based on traffic (e.g., using Kubernetes or AWS Elastic Beanstalk).
+Queue Management: Use message queues like RabbitMQ or Amazon SQS for managing video processing tasks and submissions.
+Load Balancing: Use a load balancer (e.g., AWS ELB or NGINX) to distribute requests across multiple backend servers
